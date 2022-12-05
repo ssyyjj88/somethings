@@ -1,0 +1,29 @@
+
+安装go语言
+{
+    brew install golang
+}
+
+1:go mod init example/web-service-gin
+2:go get .
+
+{
+    curl http://localhost:8080/albums
+
+    curl http://localhost:8080/albums \
+    --include \
+    --header "Content-Type: application/json" \
+    --request "POST" \
+    --data '{"id": "4","title": "The Modern Sound of Betty Carter","artist": "Betty Carter","price": 49.99}'
+
+    curl http://localhost:8080/albums \
+    --header "Content-Type: application/json" \
+    --request "GET"
+
+    curl http://localhost:8080/albums/2
+
+}
+
+端口占用
+lsof -i :8080
+kill -9 pid
